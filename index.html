@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shubham Ahire Portfolio</title>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+ 
+<style>
+    /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+    color: #0b0d3489;
+}
+
+nav {
+    background-color: #160202;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+nav ul li a:hover {
+    color: #4CAF50;
+}
+
+.navbar-name h1 {
+    color: white;
+    font-size: 2rem;
+    margin: 0;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('./img/img_1.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 150px 20px;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+/* Section Styles */
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #4CAF50;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 5px 0;
+    font-size: 1.2rem;
+}
+
+form input, form textarea {
+    width: 80%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+form input[type="submit"] {
+    width: auto;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Social Media Section */
+#social-media {
+    text-align: center;
+    padding: 20px;
+}
+
+#social-media h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #4CAF50;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon img {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icon img:hover {
+    transform: scale(1.2);
+}
+
+/* Footer Section */
+footer {
+    text-align: center;
+    padding: 40px;
+    background-color: #2a0505d8;
+    color: white;
+}
+
+footer p {
+    font-size: 1.5rem;
+}
+
+/* Skills Section */
+#skills {
+    background-color: #e8f5e9;
+    background-image: url('./img/skills-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 50px 20px;
+    color: #333;
+}
+
+#skills h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #4CAF50;
+}
+
+.skills-icons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.skill {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.skill:hover {
+    transform: scale(1.05);
+}
+
+.skill img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.skill p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Project Section */
+#projects {
+    padding: 50px 20px;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+#projects h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #4CAF50;
+}
+
+.project-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    max-width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.project-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Contact Section */
+#contact {
+    background-color: #f4f4f4;
+    padding: 50px 20px;
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #4CAF50;
+}
+
+form input, form textarea {
+    width: 100%;
+    max-width: 600px;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    nav ul {
+        gap: 20px;
+    }
+
+    .navbar-name h1 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 100px 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .project-card {
+        max-width: 100%;
+    }
+
+    .skills-icons {
+        gap: 20px;
+    }
+
+    .skill img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .project-card {
+        max-width: 45%;
+    }
+
+    form input, form textarea {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .navbar-name h1 {
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .skills-icons {
+        flex-direction: column;
+    }
+
+    .skill {
+        margin-bottom: 15px;
+    }
+
+    .project-card {
+        max-width: 100%;
+        margin: 10px 0;
+    }
+
+    form input, form textarea {
+        width: 100%;
+    }
+}
+
+
+/* Navbar Style */
+nav {
+    background-color: #160202;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+nav .navbar-name h1 {
+    color: white;
+    font-size: 2rem;
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+nav ul li a:hover {
+    color: #4CAF50;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hamburger-menu .bar {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Hide the navigation links */
+        position: absolute;
+        top: 60px; /* Position the dropdown below the navbar */
+        left: 0;
+        width: 100%;
+        background-color: #160202;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    nav ul li {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .nav-links.active {
+        display: block;
+    }
+}
+
+/* Desktop View */
+@media (min-width: 769px) {
+    .hamburger-menu {
+        display: none;
+    }
+}
+
+/* Follow Us Section */
+#follow-us {
+    background-color: #f4f4f4;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#follow-us h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #4CAF50;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon img {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icon img:hover {
+    transform: scale(1.2);
+}
+
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.icon {
+    font-size: 30px;
+    text-decoration: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.3s ease-in-out;
+}
+
+.youtube { background-color: #FF0000; }
+.linkedin { background-color: #0077b5; }
+.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.github { background-color: #333; }
+
+.icon:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+
+</style>
+
+
+<body>
+    <nav>
+        <div class="navbar-name">
+            <h1>SA</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </nav>
+    
+
+    <!-- Hero Section with Background Image -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to My Portfolio</h1>
+            <p>I'm Shubham Ahire, Passionate Web Developer</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I specialize in frontend web development, creating clean and interactive user interfaces. I am passionate about coding and constantly learning new technologies.</p>
+    </section>
+
+    <!-- Skills Section with Coding Language Logos -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-icons">
+            <div class="skill">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript">
+                <p>JavaScript</p>
+            </div>
+            <div class="skill">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React">
+                <p>React</p>
+            </div>
+            <div class="skill">
+                <img src="./logo/H_.png" alt="HTML5">
+                <p>HTML5</p>
+            </div>
+            <div class="skill">
+                <img src="./logo/css_.png" alt="CSS3">
+                <p>CSS</p>
+            </div>
+            <div class="skill">
+                <img src="./logo/python.png" alt="Python">
+                <p>Python</p>
+            </div>
+            <div class="skill">
+                <img src="./logo/python.png" alt="Flask">
+                <p>Flask</p>
+            </div>
+            <div class="skill">
+                <img src="./logo/php.png" alt="PHP">
+                <p>PHP</p>
+            </div>
+            <div class="skill">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub">
+                <p>GitHub</p>
+            </div>
+        </div>
+    </section>
+    
+<!-- Projects Section -->
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="project-cards">
+        <div class="project-card">
+            <h3>Project 1: My Portfolio</h3>
+            <p>This is my personal portfolio website built using HTML, CSS, and JavaScript.</p>
+        </div>
+        <div class="project-card">
+            <h3>Project 2: E-Commerce Website</h3>
+            <p>A full-featured e-commerce website built using React.js and Node.js.</p>
+        </div>
+        <div class="project-card">
+            <h3>Project 3: Blogging Platform</h3>
+            <p>A blogging platform built using Python and Flask, allowing users to write and share posts.</p>
+        </div>
+    </div>
+</section>
+
+    
+
+
+
+    <!-- Contact Section -->
+    <section id="contact.php">
+        <h2>Contact Me</h2>
+        <form id="contact-form">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" required></textarea><br><br>
+            <input type="submit" value="Send Message">
+        </form>
+    </section>
+
+
+
+
+<script>
+function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+}
+
+</script>
+
+
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Shubham Ahire. All rights reserved.</p>
+        
+    <!-- follo section  -->
+
+    <div class="social-icons">
+        <a href="https://www.youtube.com/@codewithsa" target="_blank" class="icon youtube">
+            <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/-shubhamahire/" target="_blank" class="icon linkedin">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.instagram.com/_shubhamahire_/" target="_blank" class="icon instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://github.com/shubhamahire95" target="_blank" class="icon github">
+            <i class="fab fa-github"></i>
+        </a>
+    </div>
+    </footer>
+
+</body>
+</html>
